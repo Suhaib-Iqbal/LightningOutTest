@@ -1,45 +1,32 @@
-
 <html>
-<h1>Hello</h1>
-<style>
 
-  a {
-    color: orange;
-  }
+<head>
+	<script src="https://creative-shark-q4y176-dev-ed.trailblaze.my.site.com/lightning/lightning.out.js"></script>
+</head>
 
-</style>
+<body>
+	<div id="auraLightning"></div>
+	<hr />
+	<hr />
+	<hr />
+	<div id="lwcLightning"></div>
+</body>
 
-<script src="https://creative-shark-q4y176-dev-ed.trailblaze.my.site.com/lightning/lightning.out.js"></script>
-
-<div data-lightning-out="true"></div>
-
-  <script>
-
-    const appName = 'c:AuraApp';
-    const componentName = 'c:lightingOutWebComponent';
-    const lightningEndpoint = 'https://creative-shark-q4y176-dev-ed.trailblaze.my.site.com';
-    const targetElement = document.querySelector("[data-lightning-out]");
-    const componentAttributes = {
-
-    };
-
-    $Lightning.use(
-            appName,
-            function (){
-              $Lightning.createComponent(
-                      componentName,
-                      componentAttributes,
-                      targetElement,
-                      function (cmp){
-                        console.log('lightning component created');
-                      }
-              );
-            },
-            lightningEndpoint
-    );
-
-
-  </script>
-
+<script>
+	$Lightning.use(
+		"c:AuraApp",
+		() => {
+			$Lightning.createComponent(
+				"c:lightingOutWebComponent",
+				{ msg: "It works (LWC)!" },
+				"lwcLightning",
+				(cmp) => {
+					console.log("LWC component was created");
+				}
+			);
+		},
+		"https://creative-shark-q4y176-dev-ed.trailblaze.my.site.com"
+	);
+</script>
 
 </html>
