@@ -1,8 +1,45 @@
+
 <html>
-  <head>
-    
-  </head>
-  <body>
-    <h1>Index file</h1>
-  </body>
+<h1>Hello</h1>
+<style>
+
+  a {
+    color: orange;
+  }
+
+</style>
+
+<script src="https://creative-shark-q4y176-dev-ed.trailblaze.my.site.com/lightning/lightning.out.js"></script>
+
+<div data-lightning-out="true"></div>
+
+  <script>
+
+    const appName = 'c:AuraApp';
+    const componentName = 'c:lightingOutWebComponent';
+    const lightningEndpoint = 'https://creative-shark-q4y176-dev-ed.trailblaze.my.site.com';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    const componentAttributes = {
+
+    };
+
+    $Lightning.use(
+            appName,
+            function (){
+              $Lightning.createComponent(
+                      componentName,
+                      componentAttributes,
+                      targetElement,
+                      function (cmp){
+                        console.log('lightning component created');
+                      }
+              );
+            },
+            lightningEndpoint
+    );
+
+
+  </script>
+
+
 </html>
